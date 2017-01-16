@@ -1,5 +1,7 @@
+// create-react-app my-app --scripts-version custom-react-scripts
+
 import React, {Component} from 'react';
-import './App.sass';
+import './SimpleStore.sass';
 import {observer} from 'mobx-react'
 
 @observer
@@ -15,6 +17,7 @@ class App extends Component {
     render() {
         return (
             <div className="app-main">
+                <h2>Simple Store</h2>
                 <div>
                     Count: {this.props.store.count}
                 </div>

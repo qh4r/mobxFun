@@ -1,0 +1,12 @@
+#container > div {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#container > div:nth-of-type(even) {
+    background-color: azure;
+}
+
+#container > div:nth-of-type(odd) {
+    background-color: palegoldenrod;
+}

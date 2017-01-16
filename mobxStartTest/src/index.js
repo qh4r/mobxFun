@@ -1,12 +1,8 @@
+// create-react-app my-app --scripts-version custom-react-scripts
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import {AppStore} from './store';
 import './index.css';
+import Root from './Root';
 
-const store = new AppStore();
-
-ReactDOM.render(
-  <App store={store} />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Root/>, document.getElementById('root'));
