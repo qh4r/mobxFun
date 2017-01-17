@@ -1,13 +1,13 @@
-import {observable} from 'mobx';
+import {observable, action} from 'mobx';
 
 export class AppStore {
     @observable count = 0;
 
-    handleAdd = () => {
+    @action handleAdd = () => {
         this.count++;
     };
 
-    handleSub = () => {
+    @action handleSub = () => {
         this.count--;
     };
 }
