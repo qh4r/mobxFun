@@ -5,6 +5,7 @@ useStrict(true); // powoduje ze do modyfikacji statu wymagane jest uzywanie akcj
 export default class Temperature {
     @observable unit = "C";
     @observable temperatureCelcius = 30;
+    @observable location = '';
 
     @computed get temperatureKelvin() {
         return this.temperatureCelcius * (9 / 5) + 32;
@@ -21,6 +22,7 @@ export default class Temperature {
             case "C" :
                 return `${this.temperatureCelcius} C`;
             case "F" :
+            default:
                 return `${this.temperatureFarrenherit} F`;
         }
     }
@@ -32,6 +34,14 @@ export default class Temperature {
         this.unit = unit;
     }
 
+    @action setLocation(location) {
+        this.location = location;
+    }
+
+    @action clearLocation() {
+        this.location = '';
+    }
+
     @action setCelciusTemperature(temp) {
         this.temperatureCelcius = temp;
     }
@@ -39,8 +49,29 @@ export default class Temperature {
 
 //asMap pozwala tworzc obserwable slowniki
 
+
+class TemperatureRecord {
+    @observable value;
+
+    constructor(location, value) {
+        this.location = location;
+        this.value = value;
+    }
+
+    @action increase() {
+        let [val, unit] = this.value.split(' ');
+        this.value = `${1 + Number(val)} ${unit}`;
+        this.value = `${1 + Number(val)} ${unit}`;
+    }
+}
+
 // tak zwany observable map - po prostu array rpzekazywany zamaist obiektu - reaguje na zmiany zawartosci
 export let tempsRecord = observable([]);
+
+// akcja dodana w strict mode
+tempsRecord.add = action(function (l, t) {
+    this.push(new TemperatureRecord(l, t));
+});
 
 
 //ALTERNATYWNA SKLADNIA BEZ DEKORATOROW

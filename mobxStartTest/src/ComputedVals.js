@@ -1,20 +1,45 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 
+
+@observer
+export class TempRow extends Component {
+    static propTypes = {
+        // temp: React.propTypes.string
+    }
+
+    constructor(props) {
+        super(props);
+        this.props = props
+    }
+
+    render(props) {
+        console.log(props);
+        return (
+            <li onClick={() => this.props.temp.increase()}><span style={{color: 'crimson'}}>{this.props.temp.location}</span> -> {this.props.temp.value}</li>
+        )
+    }
+
+}
+
 @observer
 export default class ComputedVals extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.store = props.store;
         this.temps = props.temps;
     }
 
-    render(){
+    render() {
         return (
             <div>
                 <p>
-                    <input type="text" value={this.store.temperatureCelcius} onChange={({target: {value}}) => this.store.setCelciusTemperature(+value || 0)}/>
+                    <input type="text" value={this.store.temperatureCelcius}
+                           onChange={({target: {value}}) => this.store.setCelciusTemperature(+value || 0)}/>
+                </p>
+                <p>
+                    Lokalizacja: <input type="text" value={this.store.location} onInput={({target: {value}}) => this.store.setLocation(value)}/> <button onClick={() => this.onStore()}>Zapisz</button>
                 </p>
                 <select value={this.store.unit} onChange={(e) => this.onSelctionChange(e)}>
                     <option value="K">K</option>
@@ -23,7 +48,8 @@ export default class ComputedVals extends Component {
                 </select>
                 <p>temperatura wyjsciowa: {this.store.temperature}</p>
                 <ul>
-                    {this.temps.map((x,i) => <li key={i}>{x}</li>)}
+                    {this.temps.map((x, i) => <TempRow temp={x} key={i}/>)}
+                    {/*{this.temps.map((x, i) => <li key={i}>{x.value}</li>)}*/}
                 </ul>
             </div>
         )
@@ -31,6 +57,10 @@ export default class ComputedVals extends Component {
 
     onSelctionChange({target: {value}}) {
         this.store.setUnit(value);
-        this.temps.push(this.store.temperature);
+    }
+
+    onStore() {
+        this.temps.add(this.store.location, this.store.temperature);
+        this.store.clearLocation();
     }
 }
