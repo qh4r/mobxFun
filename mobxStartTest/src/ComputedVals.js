@@ -16,13 +16,13 @@ export class TempRow extends Component {
     render(props) {
         console.log(props);
         return (
-            <li onClick={() => this.props.temp.increase()}><span style={{color: 'crimson'}}>{this.props.temp.location}</span> -> {this.props.temp.value}</li>
+            <li onClick={() => this.props.temp.increase()}><span style={{color: 'crimson'}}>{this.props.temp.location}</span> -> {this.props.temp.value} | {/\d\d:\d\d:\d\d/.exec(new Date)[0]}</li>
         )
     }
 
 }
 
-@observer
+@observer(['temps'])
 export default class ComputedVals extends Component {
     constructor(props) {
         super(props);
@@ -37,16 +37,17 @@ export default class ComputedVals extends Component {
                 <p>
                     <input type="text" value={this.store.temperatureCelcius}
                            onChange={({target: {value}}) => this.store.setCelciusTemperature(+value || 0)}/>
+                    <select value={this.store.unit} onChange={(e) => this.onSelctionChange(e)}>
+                        <option value="K">K</option>
+                        <option value="C">C</option>
+                        <option value="F">F</option>
+                    </select>
                 </p>
                 <p>
                     Lokalizacja: <input type="text" value={this.store.location} onInput={({target: {value}}) => this.store.setLocation(value)}/> <button onClick={() => this.onStore()}>Zapisz</button>
                 </p>
-                <select value={this.store.unit} onChange={(e) => this.onSelctionChange(e)}>
-                    <option value="K">K</option>
-                    <option value="C">C</option>
-                    <option value="F">F</option>
-                </select>
-                <p>temperatura wyjsciowa: {this.store.temperature}</p>
+
+                <p style={this.store.isFarenheit ? {color: 'green'} : {}}>temperatura wyjsciowa: {this.store.temperature}</p>
                 <ul>
                     {this.temps.map((x, i) => <TempRow temp={x} key={i}/>)}
                     {/*{this.temps.map((x, i) => <li key={i}>{x.value}</li>)}*/}

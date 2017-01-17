@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9106e54c-81ee-4213-bd3f-9c4e4094cdad" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobxStartTest/src/ComputedVals.js" afterPath="$PROJECT_DIR$/mobxStartTest/src/ComputedVals.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobxStartTest/src/Root.js" afterPath="$PROJECT_DIR$/mobxStartTest/src/Root.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobxStartTest/src/Temperature.js" afterPath="$PROJECT_DIR$/mobxStartTest/src/Temperature.js" />
@@ -43,11 +42,11 @@
       <file leaf-file-name="Root.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobxStartTest/src/Root.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="525">
+              <caret line="35" column="142" lean-forward="false" selection-start-line="35" selection-start-column="142" selection-end-line="35" selection-end-column="142" />
               <folding>
                 <element signature="e#67#93#0" expanded="true" />
-                <element signature="e#368#423#0" expanded="true" />
+                <element signature="e#378#433#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComputedVals.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ComputedVals.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobxStartTest/src/ComputedVals.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="152" lean-forward="false" selection-start-line="18" selection-start-column="152" selection-end-line="18" selection-end-column="152" />
+            <state relative-caret-position="735">
+              <caret line="49" column="71" lean-forward="false" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -105,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Temperature.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Temperature.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mobxStartTest/src/Temperature.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="72" column="26" lean-forward="false" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
+            <state relative-caret-position="375">
+              <caret line="25" column="60" lean-forward="false" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -148,8 +147,8 @@
         <option value="$PROJECT_DIR$/mobxStartTest/src/Root.css" />
         <option value="$PROJECT_DIR$/mobxStartTest/src/SimpleStore.js" />
         <option value="$PROJECT_DIR$/mobxStartTest/src/Root.js" />
-        <option value="$PROJECT_DIR$/mobxStartTest/src/Temperature.js" />
         <option value="$PROJECT_DIR$/mobxStartTest/src/ComputedVals.js" />
+        <option value="$PROJECT_DIR$/mobxStartTest/src/Temperature.js" />
       </list>
     </option>
   </component>
@@ -353,12 +352,12 @@
       <workItem from="1484357854116" duration="440000" />
       <workItem from="1484393087649" duration="539000" />
       <workItem from="1484598969697" duration="7322000" />
-      <workItem from="1484671302657" duration="6491000" />
+      <workItem from="1484671302657" duration="9558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19316000" />
+    <option name="totallyTimeSpent" value="22383000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="988" extended-state="6" />
@@ -437,7 +436,7 @@
           <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
           <folding>
             <element signature="e#67#93#0" expanded="true" />
-            <element signature="e#368#423#0" expanded="true" />
+            <element signature="e#378#433#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -615,25 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobxStartTest/src/Root.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#67#93#0" expanded="true" />
-            <element signature="e#368#423#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobxStartTest/src/SimpleStore.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript6.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -642,10 +622,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobxStartTest/src/Temperature.js">
+    <entry file="file://$PROJECT_DIR$/mobxStartTest/src/Root.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="72" column="26" lean-forward="false" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
+        <state relative-caret-position="525">
+          <caret line="35" column="142" lean-forward="false" selection-start-line="35" selection-start-column="142" selection-end-line="35" selection-end-column="142" />
+          <folding>
+            <element signature="e#67#93#0" expanded="true" />
+            <element signature="e#378#433#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobxStartTest/src/SimpleStore.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -660,11 +651,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mobxStartTest/src/ComputedVals.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="152" lean-forward="false" selection-start-line="18" selection-start-column="152" selection-end-line="18" selection-end-column="152" />
+        <state relative-caret-position="735">
+          <caret line="49" column="71" lean-forward="false" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobxStartTest/src/Temperature.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="60" lean-forward="false" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>

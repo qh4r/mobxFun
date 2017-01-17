@@ -1,4 +1,4 @@
-import {observable, computed, action, useStrict} from "mobx";
+import {observable, computed, action, useStrict, when, reaction} from "mobx";
 
 useStrict(true); // powoduje ze do modyfikacji statu wymagane jest uzywanie akcji
 
@@ -6,6 +6,29 @@ export default class Temperature {
     @observable unit = "C";
     @observable temperatureCelcius = 30;
     @observable location = '';
+    @observable isFarenheit = false;
+
+    constructor() {
+
+        // WHEN ODPALA SIE TYLKO RAZZZ!!!!
+        when(
+            () => this.unit == 'F',
+            () => action(() => {this.isFarenheit = true; console.log(this)})()
+        );
+
+        // TO WHEN ODPALA SIE TUZ PRZY ZARENDEROWANIU Z USTAWIONYM C
+        when(
+            () => this.unit != 'F',
+            () => action(() => {this.isFarenheit = false; console.log(this)})()
+        );
+
+        // reaction reaguje na zmiany danego observabla
+        // jest jeszcze autorun - ktory jest troche magiczny
+        reaction(
+            () => this.unit,
+            () => action(() => {this.isFarenheit = this.unit == 'F'})()
+        )
+    }
 
     @computed get temperatureKelvin() {
         return this.temperatureCelcius * (9 / 5) + 32;
@@ -60,8 +83,16 @@ class TemperatureRecord {
 
     @action increase() {
         let [val, unit] = this.value.split(' ');
-        this.value = `${1 + Number(val)} ${unit}`;
-        this.value = `${1 + Number(val)} ${unit}`;
+
+        // to nie zadziala bo akcja nie modyfikuje stanu tylko robi to setTimeout w kolejnym cyklu!!!!
+        setTimeout(() => {
+            action(() => {
+                this.value = `${1 + Number(val)} ${unit}`
+            })(); // DEKLARACJA I WYWOLANIE AKCJI
+            // mozna by to osobno zadeklarowac
+        }, 500);
+
+        // TAK SAMO JAK SET TIMEOUT DZIALAJA PROMISY - .then(action(/*modyfikuj state*/))
     }
 }
 
