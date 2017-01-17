@@ -14,7 +14,7 @@ export default class ComputedVals extends Component {
         return (
             <div>
                 <p>
-                    <input type="text" value={this.store.temperatureCelcius} onChange={({target: {value}}) => this.store.temperatureCelcius = +value || 0}/>
+                    <input type="text" value={this.store.temperatureCelcius} onChange={({target: {value}}) => this.store.setCelciusTemperature(+value || 0)}/>
                 </p>
                 <select value={this.store.unit} onChange={(e) => this.onSelctionChange(e)}>
                     <option value="K">K</option>
@@ -29,8 +29,8 @@ export default class ComputedVals extends Component {
         )
     }
 
-    onSelctionChange(e) {
-        this.store.unit = e.target.value;
+    onSelctionChange({target: {value}}) {
+        this.store.setUnit(value);
         this.temps.push(this.store.temperature);
     }
 }

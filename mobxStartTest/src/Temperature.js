@@ -1,4 +1,6 @@
-import {observable, computed} from "mobx";
+import {observable, computed, action, useStrict} from "mobx";
+
+useStrict(true); // powoduje ze do modyfikacji statu wymagane jest uzywanie akcji
 
 export default class Temperature {
     @observable unit = "C";
@@ -21,6 +23,17 @@ export default class Temperature {
             case "F" :
                 return `${this.temperatureFarrenherit} F`;
         }
+    }
+
+    // waznym plusem akcji jest to ze wrapuja wykonanie w transaction(() => {}) - co sprawia ze sa atomowe
+    // state odswiezy sie dopiero po akcji i wszystkich zmianach w niej, gdybysmy zmieniali state poza akcja to kazda zmiana
+    // powodowala by re rendering
+    @action setUnit(unit) {
+        this.unit = unit;
+    }
+
+    @action setCelciusTemperature(temp) {
+        this.temperatureCelcius = temp;
     }
 }
 
