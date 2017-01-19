@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
+import { computed } from "mobx";
 
 
 @observer
@@ -31,6 +32,10 @@ export default class ComputedVals extends Component {
         this.temps = props.temps;
     }
 
+    @computed get tempsCount() {
+        return this.temps.length;
+    }
+
     render() {
         return (
             <div>
@@ -52,6 +57,7 @@ export default class ComputedVals extends Component {
                     {this.temps.map((x, i) => <TempRow temp={x} key={i}/>)}
                     {/*{this.temps.map((x, i) => <li key={i}>{x.value}</li>)}*/}
                 </ul>
+                <p>counter: {this.tempsCount} </p>
             </div>
         )
     }
